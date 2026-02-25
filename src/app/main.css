@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+/* AJOUT POUR LE DARK MODE (Tailwind v4) :
+  On indique que le préfixe "dark:" doit s'activer si l'élément 
+  ou l'un de ses parents (comme la balise <html>) possède la classe ".dark"
+*/
+@custom-variant dark (&:is(.dark *));
