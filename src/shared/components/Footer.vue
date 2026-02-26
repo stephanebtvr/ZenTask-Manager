@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-
-const currentYear = ref(new Date().getFullYear())
+const currentYear = new Date().getFullYear()
 </script>
 <template>
   <footer class="mt-12 text-center text-sm text-slate-500 dark:text-slate-400">
@@ -30,6 +28,6 @@ const currentYear = ref(new Date().getFullYear())
         </svg>
       </a>
     </div>
-    © {currentYear} Bettaver Stéphane - Tous droits réservés
+    © {{ currentYear }} Bettaver Stéphane - Tous droits réservés
   </footer>
 </template>
