@@ -33,3 +33,30 @@ const currentYear = ref(new Date().getFullYear())
     © {{ currentYear }} Bettaver Stéphane - Tous droits réservés
   </footer>
 </template>
+<style scoped>
+/* On garde uniquement la gestion de la taille et de l'animation ici */
+.icon-svg {
+  width: 18px;
+  height: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .icon-svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.social-link:hover .icon-svg {
+  transform: translateY(-2px);
+}
+
+/* Nettoyage des liens pour éviter les flashs de couleur */
+a {
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent !important;
+  display: flex;
+}
+</style>
