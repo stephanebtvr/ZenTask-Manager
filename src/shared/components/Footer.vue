@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-const currentYear = new Date().getFullYear()
+import { ref } from 'vue'
+
+const currentYear = ref(new Date().getFullYear())
 </script>
 <template>
   <footer class="mt-12 text-center text-sm text-slate-500 dark:text-slate-400">

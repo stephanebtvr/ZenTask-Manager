@@ -5,6 +5,7 @@ import TaskList from '@/features/tasks/components/TaskList.vue'
 import Header from '@/shared/components/Header.vue'
 import Footer from '@/shared/components/Footer.vue'
 
+const currentYear = ref(new Date().getFullYear())
 // ==========================================
 // LOGIQUE DU DARK MODE
 // ==========================================
@@ -28,12 +29,14 @@ onMounted(() => {
 
 <template>
   <main
-    class="min-h-screen min-w-[320px] bg-slate-50 dark:bg-slate-900 transition-colors duration-300 py-6 sm:py-10 font-sans"
+    class="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 transition-colors duration-300 font-sans"
   >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Header :is-dark="isDark"></Header>
+    <div
+      class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col flex-grow py-6 sm:py-10"
+    >
+      <Header :is-dark="isDark" />
 
-      <div class="flex flex-col gap-8 sm:gap-10">
+      <div class="flex flex-col gap-8 sm:gap-10 my-8">
         <section class="w-full max-w-2xl mx-auto">
           <TaskForm />
         </section>
@@ -42,7 +45,10 @@ onMounted(() => {
           <TaskList />
         </section>
       </div>
-      <Footer></Footer>
+
+      <div class="mt-auto">
+        <Footer :current-year="currentYear" />
+      </div>
     </div>
   </main>
 </template>
